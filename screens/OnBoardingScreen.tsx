@@ -19,6 +19,7 @@ const OnBoardingScreen = () => {
 
   let [fontsLoaded] = useFonts({
     "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
+    "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -40,7 +41,7 @@ const OnBoardingScreen = () => {
       <View style={{ position: "absolute", bottom: 0 }}>
         <LinearGradient
           colors={[`rgba(0, 0, 0, 0)`, `#000`]}
-          style={{ position: "relative", width: width, height: height / 2.3 }}
+          style={{ position: "relative", width: width, height: height / 2.3, paddingHorizontal: 19 }}
         >
           <Text
             style={{
@@ -55,6 +56,19 @@ const OnBoardingScreen = () => {
           >
             Stay healthy even if you stay at home
           </Text>
+          <Text
+          style={{
+            fontSize: 16,
+            color: "#fff",
+            fontFamily: "Poppins-Regular",
+            textAlign: "center",
+            marginTop: 10,
+            marginBottom: 20,
+          }}
+        >
+          Staying fit to keep you in good condition can now go through mobile
+          apps.
+        </Text>
         </LinearGradient>
       </View>
     </View>
