@@ -7,6 +7,7 @@ import {
   Image,
   View,
   TouchableOpacity,
+  TextInput,
 } from "react-native";
 import React, { useCallback } from "react";
 import * as SplashScreen from "expo-splash-screen";
@@ -52,6 +53,29 @@ const HomeScreen: React.FC<navigationPropTypes> = ({ navigation }: any) => {
       <ScrollView>
         <View>
           <HomeTopBar />
+          <View
+            style={{
+              backgroundColor: "#1F212C",
+              paddingVertical: 10,
+              paddingHorizontal: 15,
+              borderRadius: 10,
+              marginVertical: 20,
+              marginHorizontal: 15,
+              flexDirection: "row",
+            }}
+          >
+            <Ionicons name="search-outline" size={24} color="#fff" />
+            <TextInput
+              placeholder="Search Workouts.."
+              placeholderTextColor="#fff"
+              style={{
+                marginLeft: 10,
+                fontSize: 14,
+                width: width,
+                fontFamily: "Poppins-Regular",
+              }}
+            />
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
