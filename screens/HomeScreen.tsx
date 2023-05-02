@@ -6,12 +6,15 @@ import {
   Text,
   Image,
   View,
+  TouchableOpacity,
 } from "react-native";
 import React, { useCallback } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { AppParams } from "../components/navigation/FlowNavigation";
 import { useFonts } from "expo-font";
+import { Ionicons } from "@expo/vector-icons";
+import HomeTopBar from "../components/home/HomeTopBar";
 
 SplashScreen.preventAutoHideAsync();
 const width = Dimensions.get("window").width;
@@ -36,28 +39,19 @@ const HomeScreen: React.FC<navigationPropTypes> = ({ navigation }: any) => {
   }
 
   return (
-    <SafeAreaView>
+    <SafeAreaView
+      style={{
+        backgroundColor: "#000",
+        flex: 1,
+        width: width,
+        height: height,
+        paddingVertical: 30,
+      }}
+      onLayout={onLayoutRootView}
+    >
       <ScrollView>
         <View>
-          <Image
-            source={require("../assets/images/avatar.jpeg")}
-            style={{
-              width: 50,
-              height: 50,
-              borderRadius: 25,
-            }}
-          />
-          <View>
-            <Text
-              style={{
-                fontSize: 16,
-                color: "#fff",
-                fontFamily: "Poppins-Regular",
-              }}
-            >
-              Welcome, user
-            </Text>
-          </View>
+          <HomeTopBar />
         </View>
       </ScrollView>
     </SafeAreaView>
