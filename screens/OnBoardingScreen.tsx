@@ -9,14 +9,14 @@ import {
 import { useFonts } from "expo-font";
 import React, { useCallback } from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import * as SplashScreen from 'expo-splash-screen';
+import * as SplashScreen from "expo-splash-screen";
+import CommonButton from "../components/common/CommonButton";
 
 SplashScreen.preventAutoHideAsync();
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
 const OnBoardingScreen = () => {
-
   let [fontsLoaded] = useFonts({
     "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
     "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
@@ -33,7 +33,10 @@ const OnBoardingScreen = () => {
   }
 
   return (
-    <View style={{ flex: 1, width: width, height: height }} onLayout={onLayoutRootView}>
+    <View
+      style={{ flex: 1, width: width, height: height }}
+      onLayout={onLayoutRootView}
+    >
       <Image
         source={require("../assets/images/onboarding.jpeg")}
         style={{ width: width, height: height, resizeMode: "cover", flex: 1 }}
@@ -41,7 +44,15 @@ const OnBoardingScreen = () => {
       <View style={{ position: "absolute", bottom: 0 }}>
         <LinearGradient
           colors={[`rgba(0, 0, 0, 0)`, `#000`]}
-          style={{ position: "relative", width: width, height: height / 2.3, paddingHorizontal: 19 }}
+          style={{
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: width,
+            height: height / 2.3,
+            paddingHorizontal: 19,
+          }}
         >
           <Text
             style={{
@@ -57,18 +68,23 @@ const OnBoardingScreen = () => {
             Stay healthy even if you stay at home
           </Text>
           <Text
-          style={{
-            fontSize: 16,
-            color: "#fff",
-            fontFamily: "Poppins-Regular",
-            textAlign: "center",
-            marginTop: 10,
-            marginBottom: 20,
-          }}
-        >
-          Staying fit to keep you in good condition can now go through mobile
-          apps.
-        </Text>
+            style={{
+              fontSize: 16,
+              color: "#fff",
+              fontFamily: "Poppins-Regular",
+              textAlign: "center",
+              marginTop: 10,
+              marginBottom: 40,
+            }}
+          >
+            Staying fit to keep you in good condition can now go through mobile
+            apps.
+          </Text>
+          <CommonButton
+            title="Get Started"
+            backgroundColor="#ADF547"
+            width={width / 1.2}
+          />
         </LinearGradient>
       </View>
     </View>
