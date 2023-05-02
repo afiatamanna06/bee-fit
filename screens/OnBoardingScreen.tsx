@@ -39,52 +39,70 @@ const OnBoardingScreen = () => {
     >
       <Image
         source={require("../assets/images/onboarding.jpeg")}
-        style={{ width: width, height: height, resizeMode: "cover", flex: 1 }}
+        style={{
+          width: width,
+          height: height,
+          resizeMode: "cover",
+          flex: 1,
+          position: "absolute",
+        }}
       />
-      <View style={{ position: "absolute", bottom: 0 }}>
+      <View style={{ flex: 1, height: height }}>
         <LinearGradient
-          colors={[`rgba(0, 0, 0, 0)`, `#000`]}
+          colors={[`rgba(0, 0, 0, 0.3)`, `#000`]}
           style={{
+            flex: 1,
             position: "relative",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "flex-end",
             width: width,
-            height: height / 2.3,
+            height: height,
             paddingHorizontal: 19,
           }}
         >
-          <Text
+          <View
             style={{
-              color: "#fff",
-              position: "relative",
-              textTransform: "capitalize",
-              fontSize: 32,
-              fontWeight: "600",
-              fontFamily: "Poppins-SemiBold",
-              textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              width: width,
+              height: height / 2.3,
             }}
           >
-            Stay healthy even if you stay at home
-          </Text>
-          <Text
-            style={{
-              fontSize: 16,
-              color: "#fff",
-              fontFamily: "Poppins-Regular",
-              textAlign: "center",
-              marginTop: 10,
-              marginBottom: 40,
-            }}
-          >
-            Staying fit to keep you in good condition can now go through mobile
-            apps.
-          </Text>
-          <CommonButton
-            title="Get Started"
-            backgroundColor="#ADF547"
-            width={width / 1.2}
-          />
+            <Text
+              style={{
+                color: "#fff",
+                position: "relative",
+                textTransform: "capitalize",
+                fontSize: 32,
+                fontWeight: "600",
+                fontFamily: "Poppins-SemiBold",
+                textAlign: "center",
+              }}
+            >
+              Stay healthy even if you stay at home
+            </Text>
+            <Text
+              style={{
+                fontSize: 16,
+                color: "#fff",
+                fontFamily: "Poppins-Regular",
+                textAlign: "center",
+                marginTop: 10,
+                marginBottom: 40,
+              }}
+            >
+              Staying fit to keep you in good condition can now go through
+              mobile apps.
+            </Text>
+            <CommonButton
+              title="Get Started"
+              backgroundColor="#ADF547"
+              width={width / 1.2}
+            />
+          </View>
         </LinearGradient>
       </View>
     </View>

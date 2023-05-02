@@ -33,8 +33,23 @@ const CommonButton = ({
     return null;
   }
   return (
-    <TouchableOpacity style={{ backgroundColor: backgroundColor, width: width, borderRadius: 5, paddingVertical: 6 }} onLayout={onLayoutRootView}>
-      <Text style={{ fontSize: 16, fontFamily: "Poppins-Regular", color: textColor, textAlign: "center" }}>
+    <TouchableOpacity
+      style={{
+        backgroundColor: backgroundColor,
+        width: width,
+        borderRadius: 5,
+        paddingVertical: 8,
+      }}
+      onLayout={onLayoutRootView}
+    >
+      <Text
+        style={{
+          fontSize: 16,
+          fontFamily: "Poppins-Regular",
+          color: textColor,
+          textAlign: "center",
+        }}
+      >
         {title}
       </Text>
     </TouchableOpacity>
