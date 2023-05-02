@@ -11,12 +11,16 @@ import React, { useCallback } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import * as SplashScreen from "expo-splash-screen";
 import CommonButton from "../components/common/CommonButton";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { AppParams } from "../components/navigation/FlowNavigation";
 
 SplashScreen.preventAutoHideAsync();
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
-const OnBoardingScreen = () => {
+type navigationPropTypes = StackNavigationProp<AppParams, "OnBoarding"> 
+
+const OnBoardingScreen: React.FC<navigationPropTypes> = ({ navigation }: any) => {
   let [fontsLoaded] = useFonts({
     "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
     "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
@@ -49,7 +53,7 @@ const OnBoardingScreen = () => {
       />
       <View style={{ flex: 1, height: height }}>
         <LinearGradient
-          colors={[`rgba(0, 0, 0, 0.3)`, `#000`]}
+          colors={[`rgba(173, 245, 71, 0.3)`, `rgba(0, 0, 0, 0.6)`, `#000`]}
           style={{
             flex: 1,
             position: "relative",
@@ -99,6 +103,7 @@ const OnBoardingScreen = () => {
             </Text>
             <CommonButton
               title="Get Started"
+              onPress={() => navigation.navigate("Home")}
               backgroundColor="#ADF547"
               width={width / 1.2}
             />
