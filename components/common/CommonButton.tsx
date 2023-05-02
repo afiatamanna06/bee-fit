@@ -40,6 +40,7 @@ const CommonButton = ({
         borderRadius: 5,
         paddingVertical: 8,
       }}
+      activeOpacity={0.9}
       onLayout={onLayoutRootView}
     >
       <Text
