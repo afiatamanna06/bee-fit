@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
+import IconButton from "../common/IconButton";
 
 const HomeTopBar = () => {
   return (
@@ -44,19 +45,7 @@ const HomeTopBar = () => {
           </Text>
         </View>
       </View>
-      <TouchableOpacity
-        style={{
-          height: 40,
-          width: 40,
-          borderWidth: 1,
-          borderColor: "#504f4f",
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: 10,
-        }}
-      >
-        <Ionicons name="notifications" size={24} color="#fff" />
-      </TouchableOpacity>
+      <IconButton name="notifications" />
     </View>
   );
 };
