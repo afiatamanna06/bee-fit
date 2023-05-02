@@ -17,6 +17,7 @@ import { useFonts } from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 import HomeTopBar from "../components/home/HomeTopBar";
 import IconButton from "../components/common/IconButton";
+import HomeSearchBar from "../components/home/HomeSearchBar";
 
 SplashScreen.preventAutoHideAsync();
 const width = Dimensions.get("window").width;
@@ -54,32 +55,7 @@ const HomeScreen: React.FC<navigationPropTypes> = ({ navigation }: any) => {
       <ScrollView>
         <View>
           <HomeTopBar />
-          <View
-            style={{
-              backgroundColor: "#1F212C",
-              paddingVertical: 10,
-              paddingHorizontal: 15,
-              borderRadius: 10,
-              marginVertical: 20,
-              marginHorizontal: 15,
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <Ionicons name="search-outline" size={24} color="#fff" />
-            <TextInput
-              placeholder="Search Workouts.."
-              placeholderTextColor="#fff"
-              style={{
-                marginLeft: 10,
-                fontSize: 14,
-                width: "75%",
-                fontFamily: "Poppins-Regular",
-              }}
-            />
-            <IconButton name="options-outline" style={{ backgroundColor: "#ADF547", color: "#000" }} />
-          </View>
+          <HomeSearchBar />
         </View>
       </ScrollView>
     </SafeAreaView>
