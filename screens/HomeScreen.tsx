@@ -18,8 +18,8 @@ import { Ionicons } from "@expo/vector-icons";
 import HomeTopBar from "../components/home/HomeTopBar";
 import IconButton from "../components/common/IconButton";
 import HomeSearchBar from "../components/home/HomeSearchBar";
-import { categories } from "../data";
 import CategoryList from "../components/home/CategoryList";
+import SectionHeader from "../components/common/SectionHeader";
 
 SplashScreen.preventAutoHideAsync();
 const width = Dimensions.get("window").width;
@@ -28,7 +28,6 @@ const height = Dimensions.get("window").height;
 type navigationPropTypes = StackNavigationProp<AppParams, "Home">;
 
 const HomeScreen: React.FC<navigationPropTypes> = ({ navigation }: any) => {
-  
   let [fontsLoaded] = useFonts({
     "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
     "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
@@ -60,6 +59,7 @@ const HomeScreen: React.FC<navigationPropTypes> = ({ navigation }: any) => {
           <HomeTopBar />
           <HomeSearchBar />
           <CategoryList />
+          <SectionHeader title="Featured Workouts" />
         </View>
       </ScrollView>
     </SafeAreaView>
