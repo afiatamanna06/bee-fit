@@ -3,26 +3,19 @@ import {
   SafeAreaView,
   ScrollView,
   StyleSheet,
-  Text,
-  Image,
   View,
-  TouchableOpacity,
-  TextInput,
 } from "react-native";
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { AppParams } from "../components/navigation/FlowNavigation";
 import { useFonts } from "expo-font";
-import { Ionicons } from "@expo/vector-icons";
 import HomeTopBar from "../components/home/HomeTopBar";
-import IconButton from "../components/common/IconButton";
 import HomeSearchBar from "../components/home/HomeSearchBar";
 import CategoryList from "../components/home/CategoryList";
 import SectionHeader from "../components/common/SectionHeader";
-import { workoutPlans, workouts } from "../data";
+import { workouts } from "../data";
 import Workout from "../components/home/Workout";
-import { Rating, AirbnbRating } from "react-native-ratings";
 import WorkoutPlan from "../components/home/WorkoutPlan";
 
 SplashScreen.preventAutoHideAsync();

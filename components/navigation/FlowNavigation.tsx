@@ -1,11 +1,14 @@
-import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navigation/native-stack";
+import {
+  createNativeStackNavigator,
+  NativeStackScreenProps,
+} from "@react-navigation/native-stack";
 import HomeScreen from "../../screens/HomeScreen";
 import OnBoardingScreen from "../../screens/OnBoardingScreen";
 
 export type AppParams = {
-    Home: undefined;
-    OnBoarding: undefined;
-  };
+  Home: undefined;
+  OnBoarding: undefined;
+};
 
 const Stack = createNativeStackNavigator<AppParams>();
 

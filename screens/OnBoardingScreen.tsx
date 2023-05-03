@@ -18,9 +18,11 @@ SplashScreen.preventAutoHideAsync();
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
-type navigationPropTypes = StackNavigationProp<AppParams, "OnBoarding"> 
+type navigationPropTypes = StackNavigationProp<AppParams, "OnBoarding">;
 
-const OnBoardingScreen: React.FC<navigationPropTypes> = ({ navigation }: any) => {
+const OnBoardingScreen: React.FC<navigationPropTypes> = ({
+  navigation,
+}: any) => {
   let [fontsLoaded] = useFonts({
     "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
     "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
