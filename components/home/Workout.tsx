@@ -12,6 +12,7 @@ const Workout = ({ workout, onPress }: propTypes) => {
   return (
     <TouchableOpacity
       onPress={onPress}
+      activeOpacity={0.7}
       style={{
         backgroundColor: "#1F212C",
         marginRight: 20,

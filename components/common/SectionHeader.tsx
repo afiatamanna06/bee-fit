@@ -26,7 +26,7 @@ const SectionHeader = ({title}: propTypes) => {
       >
         {title}
       </Text>
-      <TouchableOpacity>
+      <TouchableOpacity activeOpacity={0.7}>
         <Text
           style={{
             fontSize: 14,

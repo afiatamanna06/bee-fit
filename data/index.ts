@@ -214,7 +214,7 @@ export const workoutPlans: Plan[] = [
     duration: "8 weeks",
     location: "Home",
     image: require("../assets/images/workouts/photo-1541534741688-6078c6bfb5c.jpeg"),
-    rating: 5,
+    rating: 3,
     minutes: 52,
     calories: 350,
     description:
