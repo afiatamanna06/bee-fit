@@ -100,6 +100,21 @@ const PlanOverviewScreen: React.FC<navigationPropTypes> = ({
           />
           <View
             style={{
+              position: "absolute",
+              zIndex: 2,
+              right: 15,
+              top: 0,
+              padding: 8,
+            }}
+          >
+            <IconButton
+              name="bookmark-outline"
+              borderWidth={0}
+              background="rgba(0, 0, 0, .5)"
+            />
+          </View>
+          <View
+            style={{
               display: "flex",
               flexDirection: "row",
               justifyContent: "space-between",
@@ -110,6 +125,7 @@ const PlanOverviewScreen: React.FC<navigationPropTypes> = ({
               borderRadius: 4,
               backgroundColor: "rgba(0, 0, 0, .5)",
               marginBottom: 10,
+              zIndex: 2,
             }}
           >
             <View style={{ flexDirection: "row", alignItems: "center" }}>
