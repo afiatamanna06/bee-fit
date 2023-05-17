@@ -7,9 +7,10 @@ interface PropTypes {
   size?: number;
   color?: string;
   name: keyof typeof Ionicons.glyphMap;
+  onPress?: () => void;
 }
 
-const IconButton = ({ name, color = "#fff", size = 24, style }: PropTypes) => {
+const IconButton = ({ name, color = "#fff", size = 24, style, onPress }: PropTypes) => {
   return (
     <TouchableOpacity
       style={[{
@@ -22,6 +23,7 @@ const IconButton = ({ name, color = "#fff", size = 24, style }: PropTypes) => {
         borderRadius: 10,
       }, style]}
       activeOpacity={0.9}
+      onPress={onPress}
     >
       <Ionicons name={name} size={size} color={color} />
     </TouchableOpacity>

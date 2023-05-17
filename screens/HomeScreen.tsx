@@ -71,7 +71,7 @@ const HomeScreen: React.FC<navigationPropTypes> = ({ navigation }: any) => {
           >
             {workouts.map((workout) => (
               <Workout
-                onPress={() => navigation.navigate("PlanOverview")}
+                onPress={() => navigation.navigate("PlanOverview", { workout: workout })}
                 workout={workout}
                 key={workout.id}
               />
