@@ -254,6 +254,16 @@ const PlanOverviewScreen: React.FC<navigationPropTypes> = ({
           >
             {workout.description}
           </Text>
+          <Text
+            style={{
+              fontSize: 17,
+              color: "#fff",
+              fontFamily: "Poppins-SemiBold",
+              marginTop: 10,
+            }}
+          >
+            Exercises ({workout.exercises.length})
+          </Text>
         </View>
       </ScrollView>
     </SafeAreaView>
