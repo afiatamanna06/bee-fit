@@ -98,6 +98,7 @@ const OnBoardingScreen: React.FC<navigationPropTypes> = ({
                 textAlign: "center",
                 marginTop: 10,
                 marginBottom: 40,
+                marginHorizontal: 15,
               }}
             >
               Staying fit to keep you in good condition can now go through

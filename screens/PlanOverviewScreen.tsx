@@ -193,49 +193,68 @@ const PlanOverviewScreen: React.FC<navigationPropTypes> = ({
             </View>
           </View>
         </View>
-        <View style={{ paddingVertical: 15, marginHorizontal: 15, }}>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: 1,
-          }}
-        >
-          <Text
+        <View style={{ paddingVertical: 15, marginHorizontal: 15 }}>
+          <View
             style={{
-              fontSize: 18,
-              color: "#fff",
-              fontFamily: "Poppins-SemiBold",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: 1,
             }}
           >
-            {workout.name}
-          </Text>
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Ionicons name="star" color={"#F2E205"} size={20} />
             <Text
               style={{
-                fontSize: 16,
+                fontSize: 20,
                 color: "#fff",
-                fontFamily: "Poppins-Regular",
-                marginTop: 3,
-                marginLeft: 5,
+                fontFamily: "Poppins-SemiBold",
               }}
             >
-              {workout.rating}
+              {workout.name}
             </Text>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Ionicons name="star" color={"#F2E205"} size={20} />
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: "#fff",
+                  fontFamily: "Poppins-Regular",
+                  marginTop: 3,
+                  marginLeft: 5,
+                }}
+              >
+                {workout.rating}
+              </Text>
+            </View>
           </View>
+          <Text
+            style={{
+              fontSize: 14,
+              color: "#fff",
+              fontFamily: "Poppins-Regular",
+            }}
+          >
+            {workout.coach}
+          </Text>
+          <Text
+            style={{
+              fontSize: 17,
+              color: "#fff",
+              fontFamily: "Poppins-SemiBold",
+              marginTop: 10,
+            }}
+          >
+            Description
+          </Text>
+          <Text
+            style={{
+              fontSize: 14,
+              color: "#fff",
+              fontFamily: "Poppins-Regular",
+            }}
+          >
+            {workout.description}
+          </Text>
         </View>
-        <Text
-          style={{
-            fontSize: 14,
-            color: "#fff",
-            fontFamily: "Poppins-Regular",
-          }}
-        >
-          {workout.coach}
-        </Text>
-      </View>
       </ScrollView>
     </SafeAreaView>
   );
