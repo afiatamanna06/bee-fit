@@ -13,6 +13,7 @@ import IconButton from "../components/common/IconButton";
 import * as SplashScreen from "expo-splash-screen";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { AppParams } from "../components/navigation/FlowNavigation";
+import { BlurView } from "expo-blur";
 
 SplashScreen.preventAutoHideAsync();
 const width = Dimensions.get("window").width;
@@ -82,8 +83,10 @@ const PlanOverviewScreen: React.FC<navigationPropTypes> = ({
           style={{
             width: width,
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "flex-end",
             alignItems: "center",
+            position: "relative",
+            height: 200,
           }}
         >
           <Image
@@ -92,8 +95,87 @@ const PlanOverviewScreen: React.FC<navigationPropTypes> = ({
               width: width / 1.1,
               height: 200,
               borderRadius: 8,
+              position: "absolute",
             }}
           />
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              width: width / 1.16,
+              paddingHorizontal: 15,
+              paddingVertical: 6,
+              borderRadius: 4,
+              backgroundColor: "rgba(0, 0, 0, .5)",
+              marginBottom: 10,
+            }}
+          >
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: "#ADF547",
+                  fontFamily: "Poppins-SemiBold",
+                  marginRight: 4,
+                }}
+              >
+                {workout.minutes}
+              </Text>
+              <Text
+                style={{
+                  fontSize: 14,
+                  color: "#fff",
+                  fontFamily: "Poppins-Regular",
+                }}
+              >
+                minutes
+              </Text>
+            </View>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: "#ADF547",
+                  fontFamily: "Poppins-SemiBold",
+                  marginRight: 4,
+                }}
+              >
+                {workout.calories}
+              </Text>
+              <Text
+                style={{
+                  fontSize: 14,
+                  color: "#fff",
+                  fontFamily: "Poppins-Regular",
+                }}
+              >
+                calories
+              </Text>
+            </View>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: "#ADF547",
+                  fontFamily: "Poppins-SemiBold",
+                  marginRight: 4,
+                }}
+              >
+                {workout.exercises.length}
+              </Text>
+              <Text
+                style={{
+                  fontSize: 14,
+                  color: "#fff",
+                  fontFamily: "Poppins-Regular",
+                }}
+              >
+                exercises
+              </Text>
+            </View>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
