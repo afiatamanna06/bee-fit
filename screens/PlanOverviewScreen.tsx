@@ -10,10 +10,10 @@ import {
   Image,
 } from "react-native";
 import IconButton from "../components/common/IconButton";
+import { Ionicons } from "@expo/vector-icons";
 import * as SplashScreen from "expo-splash-screen";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { AppParams } from "../components/navigation/FlowNavigation";
-import { BlurView } from "expo-blur";
 
 SplashScreen.preventAutoHideAsync();
 const width = Dimensions.get("window").width;
@@ -193,6 +193,49 @@ const PlanOverviewScreen: React.FC<navigationPropTypes> = ({
             </View>
           </View>
         </View>
+        <View style={{ paddingVertical: 15, marginHorizontal: 15, }}>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: 1,
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 18,
+              color: "#fff",
+              fontFamily: "Poppins-SemiBold",
+            }}
+          >
+            {workout.name}
+          </Text>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Ionicons name="star" color={"#F2E205"} size={20} />
+            <Text
+              style={{
+                fontSize: 16,
+                color: "#fff",
+                fontFamily: "Poppins-Regular",
+                marginTop: 3,
+                marginLeft: 5,
+              }}
+            >
+              {workout.rating}
+            </Text>
+          </View>
+        </View>
+        <Text
+          style={{
+            fontSize: 14,
+            color: "#fff",
+            fontFamily: "Poppins-Regular",
+          }}
+        >
+          {workout.coach}
+        </Text>
+      </View>
       </ScrollView>
     </SafeAreaView>
   );
