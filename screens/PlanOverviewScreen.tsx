@@ -15,6 +15,8 @@ import { Ionicons } from "@expo/vector-icons";
 import * as SplashScreen from "expo-splash-screen";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { AppParams } from "../components/navigation/FlowNavigation";
+import { LinearGradient } from "expo-linear-gradient";
+import CommonButton from "../components/common/CommonButton";
 
 SplashScreen.preventAutoHideAsync();
 const width = Dimensions.get("window").width;
@@ -52,6 +54,7 @@ const PlanOverviewScreen: React.FC<navigationPropTypes> = ({
         height: height,
         paddingVertical: 30,
       }}
+      onLayout={onLayoutRootView}
     >
       <ScrollView style={{}}>
         <View
@@ -330,6 +333,18 @@ const PlanOverviewScreen: React.FC<navigationPropTypes> = ({
           ))}
         </View>
       </ScrollView>
+      <LinearGradient
+        style={{ position: "absolute", width: width, bottom: 0, paddingVertical: 15 }}
+        colors={["rgba(0, 0, 0, .1)", "rgba(0, 0, 0, 1)"]}
+      >
+        <View style={{ width: width, display: "flex", alignItems:"center", justifyContent: "center", }}>
+          <CommonButton
+            title="Start Workout"
+            backgroundColor="#ADF547"
+            width={width / 1.2}
+          />
+        </View>
+      </LinearGradient>
     </SafeAreaView>
   );
 };

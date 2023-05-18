@@ -27,6 +27,7 @@ const HomeSearchBar = () => {
           fontSize: 14,
           width: "75%",
           fontFamily: "Poppins-Regular",
+          color: "#fff",
         }}
       />
       <IconButton
