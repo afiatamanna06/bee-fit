@@ -2,7 +2,7 @@ import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 
-const WorkoutExercises = ({ workout }: any) => {
+const WorkoutExercises = ({ workout }) => {
   return (
     <>
       <Text

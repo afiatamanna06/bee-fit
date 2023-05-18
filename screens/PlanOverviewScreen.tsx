@@ -17,6 +17,7 @@ import CommonButton from "../components/common/CommonButton";
 import WorkoutExercises from "../components/plan-overview/WorkoutExercises";
 import WorkoutIntro from "../components/plan-overview/WorkoutIntro";
 import WorkoutHeading from "../components/plan-overview/WorkoutHeading";
+import { Workout } from "../data";
 
 SplashScreen.preventAutoHideAsync();
 const width = Dimensions.get("window").width;
@@ -43,7 +44,7 @@ const PlanOverviewScreen: React.FC<navigationPropTypes> = ({
     return null;
   }
 
-  const workout = route.params.workout;
+  const workout: Workout = route.params.workout;
 
   return (
     <SafeAreaView

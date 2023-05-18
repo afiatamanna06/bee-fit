@@ -5,7 +5,7 @@ import IconButton from "../common/IconButton";
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
-const WorkoutHeading = ({ workout }: any) => {
+const WorkoutHeading = ({ workout }) => {
   return (
     <View
       style={{
