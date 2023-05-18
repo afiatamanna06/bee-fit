@@ -7,11 +7,8 @@ import {
   View,
   ScrollView,
   Dimensions,
-  Image,
-  TouchableOpacity,
 } from "react-native";
 import IconButton from "../components/common/IconButton";
-import { Ionicons } from "@expo/vector-icons";
 import * as SplashScreen from "expo-splash-screen";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { AppParams } from "../components/navigation/FlowNavigation";
@@ -19,6 +16,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import CommonButton from "../components/common/CommonButton";
 import WorkoutExercises from "../components/plan-overview/WorkoutExercises";
 import WorkoutIntro from "../components/plan-overview/WorkoutIntro";
+import WorkoutHeading from "../components/plan-overview/WorkoutHeading";
 
 SplashScreen.preventAutoHideAsync();
 const width = Dimensions.get("window").width;
@@ -85,120 +83,7 @@ const PlanOverviewScreen: React.FC<navigationPropTypes> = ({
             Plan Overview
           </Text>
         </View>
-        <View
-          style={{
-            width: width,
-            display: "flex",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            position: "relative",
-            height: 200,
-          }}
-        >
-          <Image
-            source={workout.image}
-            style={{
-              width: width / 1.1,
-              height: 200,
-              borderRadius: 8,
-              position: "absolute",
-            }}
-          />
-          <View
-            style={{
-              position: "absolute",
-              zIndex: 2,
-              right: 15,
-              top: 0,
-              padding: 8,
-            }}
-          >
-            <IconButton
-              name="bookmark-outline"
-              borderWidth={0}
-              background="rgba(0, 0, 0, .5)"
-            />
-          </View>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-              width: width / 1.16,
-              paddingHorizontal: 15,
-              paddingVertical: 6,
-              borderRadius: 4,
-              backgroundColor: "rgba(0, 0, 0, .5)",
-              marginBottom: 10,
-              zIndex: 2,
-            }}
-          >
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Text
-                style={{
-                  fontSize: 16,
-                  color: "#ADF547",
-                  fontFamily: "Poppins-SemiBold",
-                  marginRight: 4,
-                }}
-              >
-                {workout.minutes}
-              </Text>
-              <Text
-                style={{
-                  fontSize: 14,
-                  color: "#fff",
-                  fontFamily: "Poppins-Regular",
-                }}
-              >
-                minutes
-              </Text>
-            </View>
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Text
-                style={{
-                  fontSize: 16,
-                  color: "#ADF547",
-                  fontFamily: "Poppins-SemiBold",
-                  marginRight: 4,
-                }}
-              >
-                {workout.calories}
-              </Text>
-              <Text
-                style={{
-                  fontSize: 14,
-                  color: "#fff",
-                  fontFamily: "Poppins-Regular",
-                }}
-              >
-                calories
-              </Text>
-            </View>
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Text
-                style={{
-                  fontSize: 16,
-                  color: "#ADF547",
-                  fontFamily: "Poppins-SemiBold",
-                  marginRight: 4,
-                }}
-              >
-                {workout.exercises.length}
-              </Text>
-              <Text
-                style={{
-                  fontSize: 14,
-                  color: "#fff",
-                  fontFamily: "Poppins-Regular",
-                }}
-              >
-                exercises
-              </Text>
-            </View>
-          </View>
-        </View>
+        <WorkoutHeading workout={workout} />
         <View style={{ paddingVertical: 15, marginHorizontal: 15 }}>
           <WorkoutIntro workout={workout} />
           <WorkoutExercises workout={workout} />
