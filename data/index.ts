@@ -6,7 +6,7 @@ interface User {
 }
 export const user: User = {
   name: "tugane",
-  profile: require("../assets/images/avatar.jpeg"),
+  profile: require("../assets/images/avatar.png"),
 };
 
 export interface Category {
